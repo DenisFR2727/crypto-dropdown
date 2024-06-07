@@ -21,7 +21,7 @@
 .default-coins li {
   padding: 10px;
   font-family: Poppins;
-  color: white;
+  color: black;
   font-weight: 700;
 }
 .btn-search {
@@ -81,6 +81,6 @@ h2 {
   display: flex;
   justify-content: center;
   font-family: Poppins;
-  color: white;
+  color: black;
   font-weight: 700;
 }
