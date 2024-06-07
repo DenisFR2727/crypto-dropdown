@@ -1,0 +1,18 @@
+.btn-coins {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.btn-coins button {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: black;
+  color: white;
+  font-weight: 700;
+}
+.btn-coins button:hover {
+  background: grey;
+}

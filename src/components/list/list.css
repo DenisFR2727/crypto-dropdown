@@ -1,0 +1,22 @@
+.list-coins {
+  position: relative;
+  border: 1px solid black;
+  padding-top: 10px;
+  max-height: calc(1.5em * 15);
+  overflow-y: auto;
+  scrollbar-width: none;
+  min-height: 380px;
+}
+.list-coins::-webkit-scrollbar {
+  display: none;
+}
+.list-coins li {
+  padding-top: 19px;
+  padding-left: 20px;
+  list-style: none;
+  font-weight: 700;
+}
+.star {
+  padding-right: 10px;
+  cursor: pointer;
+}
