@@ -1,7 +1,5 @@
-import React from "react";
-import "./App.css";
-import List from "./components/list/List";
 import Search from "./components/search/Search";
+import "./App.css";
 
 function App() {
   return (
