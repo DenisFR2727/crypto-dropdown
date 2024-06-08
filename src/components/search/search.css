@@ -39,7 +39,7 @@
   font-family: Poppins;
   opacity: 1;
   max-height: 500px;
-  animation: list-dropdown 3s forwards;
+  animation: list-dropdown 1s forwards;
   transition: opacity 2s;
   position: relative;
   z-index: 1;

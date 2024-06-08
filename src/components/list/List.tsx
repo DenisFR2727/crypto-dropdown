@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { fetchCoinList } from "../api";
 import { ICoin } from "../api";
 import { useFilterCoins } from "../hooks";
+import { useAnimation } from "../hooks/animation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as fasStar } from "@fortawesome/free-solid-svg-icons";
@@ -28,6 +29,10 @@ function List({ query, coins, addFavorite, removeFavorite }: IListProps) {
     fetchData();
   }, []);
 
+  const listRef = useRef<HTMLDivElement>(null);
+  useAnimation(filteredCoins, listRef);
+
+  //   add and remove favorite coins
   const handleAddFavorite = useCallback(
     (coin: ICoin) => {
       if (favoriteCoins.find((c: ICoin) => c === coin)) {
@@ -41,9 +46,9 @@ function List({ query, coins, addFavorite, removeFavorite }: IListProps) {
     [addFavorite, removeFavorite, favoriteCoins]
   );
   return (
-    <div className="list-coins">
+    <div className="list-coins" ref={listRef}>
       {filteredCoins.map((coin: ICoin, ind: number) => (
-        <li key={ind}>
+        <li key={ind} style={{ opacity: 0, transform: "translateY(-20px)" }}>
           <FontAwesomeIcon
             className="star"
             icon={favoriteCoins.includes(coin) ? fasStar : farStar}
@@ -55,5 +60,4 @@ function List({ query, coins, addFavorite, removeFavorite }: IListProps) {
     </div>
   );
 }
-
 export default List;
